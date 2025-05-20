@@ -169,6 +169,7 @@ async fn doublecard(ctx: &Context, msg: &Message, args: Args) -> CommandResult {
     let card_legal_m = card.legalities.modern;
     let card_legal_p = card.legalities.pauper;
     let card_legal_c = card.legalities.commander;
+	let card_set = card.set_name;
 
     if let Some((cf, cp)) = card_face.zip(card_price) {
         let fs = cf[0].clone();
@@ -200,7 +201,7 @@ async fn doublecard(ctx: &Context, msg: &Message, args: Args) -> CommandResult {
 
     let timeframe = now.elapsed().as_millis();
 
-    check_msg(msg.channel_id.say(&ctx.http, format!("Fetch time in ms: {timeframe}\nModern: {card_legal_m:?}\nPauper: {card_legal_p:?}\nCommander: {card_legal_c:?}")).await);
+    check_msg(msg.channel_id.say(&ctx.http, format!("Fetch time in ms: {timeframe}\nModern: {card_legal_m:?}\nPauper: {card_legal_p:?}\nCommander: {card_legal_c:?}\nPrinting: {card_set")).await);
 
     Ok(())
 }
