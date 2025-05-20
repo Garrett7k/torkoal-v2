@@ -201,7 +201,7 @@ async fn doublecard(ctx: &Context, msg: &Message, args: Args) -> CommandResult {
 
     let timeframe = now.elapsed().as_millis();
 
-    check_msg(msg.channel_id.say(&ctx.http, format!("Fetch time in ms: {timeframe}\nModern: {card_legal_m:?}\nPauper: {card_legal_p:?}\nCommander: {card_legal_c:?}\nPrinting: {card_set")).await);
+    check_msg(msg.channel_id.say(&ctx.http, format!("Fetch time in ms: {timeframe}\nModern: {card_legal_m:?}\nPauper: {card_legal_p:?}\nCommander: {card_legal_c:?}\nPrinting: {card_set}")).await);
 
     Ok(())
 }
