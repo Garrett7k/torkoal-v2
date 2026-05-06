@@ -101,7 +101,7 @@ async fn card(ctx: &Context, msg: &Message, args: Args) -> CommandResult {
             "{}",
             format!(
                 "{:?}, {:?}",
-                e.to_string(),
+                e,
                 check_msg(msg.channel_id.say(&ctx.http, e.to_string()).await),
             )
         ),
